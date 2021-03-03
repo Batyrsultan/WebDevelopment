@@ -1,0 +1,25 @@
+<h2>Products</h2>
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'">
+      {{ product.name}}, {{ product.rating }}
+    </a>
+  </h3>
+  <p class="p1">
+    <img src="{{product.image1}}"  width="150" height="150">
+    <img src="{{product.image2}}"  width="150" height="150">
+    <img src="{{product.image3}}"  width="150" height="150">
+
+  </p>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+
+  <button (click)="share()" onclick="window.location.href = 'https://api.whatsapp.com/send/?phone=%2B77076673710&text&app_absent=0';">
+    Share
+  </button>
+
+
+</div>
